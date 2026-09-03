@@ -18,8 +18,8 @@
     :root{
         /** colors **/
         --color-text: #0B132B;
-        --color-background: #FCFAEE;
-        --color-accent: #06B178;
+        --color-background: #FFFFFF;
+        --color-accent: #008C95;
         --color-primary: #3A506B;
 
         /** font **/
@@ -39,8 +39,8 @@
         --border-radius: 0.5rem;
 
         /** focus **/
-        --focus-color: var(--color-accent);
-        --focus-width: 3px;
+        --focus-color: var(--color-primary);
+        --focus-width: 2px;
     }
 
     body{
@@ -100,9 +100,39 @@
         justify-content: flex-end;
     }
 
-    .card{}
+    .gallery{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-med);
+    }
 
-    .button{}
+    .gallery h2 {
+        text-align: center;
+    }
+
+    .guide-list {
+        width: fit-content;
+        margin-inline: auto;
+    }
+
+    .guide-list ul {
+        list-style: none;
+        margin-top: var(--space-sml);
+    }
+
+    .guide-list > li {
+        margin: var(--space-med) 0;
+    }
+
+    .button{
+        --button-background: var(--color-accent);
+        --button-text: var(--color-background);
+
+        background-color: var(--button-background);
+        color: var(--button-text);
+        padding: var(--space-sml);
+        border-radius: var(--border-radius);
+    }
 
     .callout{}
 
@@ -110,7 +140,6 @@
 
     .resource-list{}
 
-    .gallery{}
 
 }
 
@@ -124,7 +153,7 @@
 
     
     a:hover {
-        color: var(--color-accent);
+        color: var(--focus-color);
     }
 
     a:focus-visible {
@@ -132,6 +161,10 @@
     }
 
     /* current page */
+    nav a[aria-current="page"] {
+        border-bottom: 2px solid var(--color-accent);
+        
+    }
 
     /* form validation */
 
