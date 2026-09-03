@@ -1,0 +1,41 @@
+@layer base, layout, components, utilities, overrides;
+
+@layer base{
+
+    :root{
+        /** colors **/
+        --color-text:;
+        --color-background:;
+        --color-accent:;
+
+        /** font **/
+
+        --font-family:;
+        --font-size:;
+
+        /** spacing **/
+
+        --space-sml:;
+        --space-med:;
+        --space-lrg:;
+        --space-xl:;
+
+    }
+
+}
+
+@layer layout{
+
+}
+
+@layer components{
+
+}
+
+@layer utilities{
+
+}
+
+@layer overrides{
+
+}
