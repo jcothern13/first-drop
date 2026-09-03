@@ -44,7 +44,7 @@
     }
 
     body{
-        background-color: var(--color-background);
+        background-color: var(--color-text);
         color: var(--color-text);
         font-family: var(--font-family);
         font-size: var(--font-size-text);
@@ -63,6 +63,7 @@
 
     a{
         color: var(--color-primary);
+        text-decoration: none;
     }
 
     img{
@@ -71,26 +72,33 @@
         border-radius: var(--border-radius);
     }
 
-
 }
 
 @layer layout{
 
-    header{}
+    header, main, footer{
+        width: 100%;
+        max-width: 75rem;
+        background-color: var(--color-background);
+        margin-inline: auto;
+        padding: var(--space-med);
+    }
 
-    main{}
-
-    .page-container{}
-
-    .content-grid{}
-
-    footer{}
+    .content-grid{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-lrg);
+    }
 
 }
 
 @layer components{
 
-    .nav{}
+    nav{
+        display: flex;
+        gap: var(--space-med);
+        justify-content: flex-end;
+    }
 
     .card{}
 
