@@ -23,8 +23,10 @@
         --color-primary: #3A506B;
 
         /** font **/
-        --font-family: Arial, Helvetica sans-serif;
-        --font-size: 1rem;
+        --font-family: Arial, Helvetica, sans-serif;
+        --font-size-text: 1rem;
+        --font-heading-lrg: 3rem;
+        --font-heading-sml: 2rem;
         --line-height: 1.5;
 
         /** spacing **/
@@ -41,15 +43,33 @@
         --focus-width: 3px;
     }
 
-    body{}
+    body{
+        background-color: var(--color-background);
+        color: var(--color-text);
+        font-family: var(--font-family);
+        font-size: var(--font-size-text);
+        line-height: var(--line-height);
+    }
 
-    h1, h2, h3{}
+    h1{
+        font-size: var(--font-heading-lrg);
+        color: var(--color-primary);
+    }
 
-    p{}
+    h2{
+        font-size: var(--font-heading-sml);
+        color: var(--color-primary);
+    }
 
-    a{}
+    a{
+        color: var(--color-primary);
+    }
 
-    img{}
+    img{
+        max-width: 100%;
+        height: auto;
+        border-radius: var(--border-radius);
+    }
 
 
 }
@@ -70,13 +90,42 @@
 
 @layer components{
 
+    .nav{}
+
+    .card{}
+
+    .button{}
+
+    .callout{}
+
+    .form-field{}
+
+    .resource-list{}
+
+    .gallery{}
+
 }
 
 @layer utilities{
 
+    .u-text-center{}
+
 }
 
 @layer states{
+
+    
+    a:hover {
+        color: var(--color-accent);
+    }
+
+    a:focus-visible {
+        outline: var(--focus-width) solid var(--focus-color);
+    }
+
+    /* current page */
+
+    /* form validation */
 
 }
 
@@ -85,5 +134,10 @@
 }
 
 @layer print{
+    @media print{
 
+        nav{
+            display: none;
+          }
+        }
 }
