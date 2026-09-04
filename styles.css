@@ -39,7 +39,6 @@
         --border-radius: 0.5rem;
 
         /** focus **/
-        --focus-color: var(--color-primary);
         --focus-width: 2px;
     }
 
@@ -76,7 +75,9 @@
 
 @layer layout{
 
-    header, main, footer{
+    header, 
+    main, 
+    footer{
         width: 100%;
         max-width: 75rem;
         background-color: var(--color-background);
@@ -115,10 +116,8 @@
     }
 
     .guide-list > li{
-        margin: var(--space-med);
+        margin-block: var(--space-med);
     }
-
-
 
     .button{
         --button-background: var(--color-accent);
@@ -164,7 +163,6 @@
 
     .u-list-unstyled{
         list-style: none;
-        padding-left: 0;
     }
 
     .u-text-small{
@@ -177,22 +175,21 @@
 
     
     a:hover{
-        color: var(--focus-color);
+        color: var(--color-accent);
     }
 
     a:focus-visible{
-        outline: var(--focus-width) solid var(--focus-color);
+        outline: var(--focus-width) solid var(--color-primary);
     }
 
-    /* current page */
     nav a[aria-current="page"]{
         border-bottom: 2px solid var(--color-accent);
         
     }
 
-    /* form validation */
-    .form-field input:invalid, .form-field textarea:invalid{
-    border: 2px solid var(--color-accent);
+    .form-field input:invalid, 
+    .form-field textarea:invalid{
+    border: var(--focus-width) solid var(--color-accent);
 }
 
 }
@@ -211,7 +208,7 @@
         body{
             background-color: var(--color-background);
         }
-        
+
         body, h1, h2, a{
             color: #000;
         }
