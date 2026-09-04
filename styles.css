@@ -3,11 +3,11 @@
 @layer reset{
     *,
     *::before,
-    *::after {
+    *::after{
       box-sizing: border-box;
     }
   
-    body {
+    body{
       margin: 0;
     }
 
@@ -89,12 +89,11 @@
         grid-template-columns: 1fr 1fr;
         gap: var(--space-lrg);
     }
-
 }
 
 @layer components{
 
-    nav{
+    nav ul{
         display: flex;
         gap: var(--space-med);
         justify-content: flex-end;
@@ -106,23 +105,20 @@
         gap: var(--space-med);
     }
 
-    .gallery h2 {
-        text-align: center;
-    }
-
-    .guide-list {
+    .guide-list{
         width: fit-content;
         margin-inline: auto;
     }
 
-    .guide-list ul {
-        list-style: none;
+    .guide-list ul{
         margin-top: var(--space-sml);
     }
 
-    .guide-list > li {
-        margin: var(--space-med) 0;
+    .guide-list > li{
+        margin: var(--space-med);
     }
+
+
 
     .button{
         --button-background: var(--color-accent);
@@ -132,41 +128,72 @@
         color: var(--button-text);
         padding: var(--space-sml);
         border-radius: var(--border-radius);
+        border: none;
     }
 
-    .callout{}
+    .form-field{
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-sml);
+        margin-bottom: var(--space-med);
+    }
 
-    .form-field{}
+    .form-field textarea{
+        resize: vertical;
+        font-family: var(--font-family);
+    }
 
-    .resource-list{}
+    form{
+        max-width: 20rem;
+        margin-inline: auto;
+    }
+
+    form > .button{
+        display: block;
+        margin-inline: auto;
+    }
 
 
 }
 
 @layer utilities{
 
-    .u-text-center{}
+    .u-text-center{
+        text-align: center;
+    }
+
+    .u-list-unstyled{
+        list-style: none;
+        padding-left: 0;
+    }
+
+    .u-text-small{
+        font-size: 0.75rem;
+    }
 
 }
 
 @layer states{
 
     
-    a:hover {
+    a:hover{
         color: var(--focus-color);
     }
 
-    a:focus-visible {
+    a:focus-visible{
         outline: var(--focus-width) solid var(--focus-color);
     }
 
     /* current page */
-    nav a[aria-current="page"] {
+    nav a[aria-current="page"]{
         border-bottom: 2px solid var(--color-accent);
         
     }
 
     /* form validation */
+    .form-field input:invalid, .form-field textarea:invalid{
+    border: 2px solid var(--color-accent);
+}
 
 }
 
@@ -180,5 +207,13 @@
         nav{
             display: none;
           }
+
+        body{
+            background-color: var(--color-background);
+        }
+        
+        body, h1, h2, a{
+            color: #000;
+        }
         }
 }

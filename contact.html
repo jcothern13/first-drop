@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>First Drop</title>
+    <title>First Drop - Contact Us</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -12,22 +12,47 @@
 
     <header>
         <h1>First Drop</h1>
-        A Beginner's Guide to Roller Coasters and Theme Parks
-
+        <p>A Beginner's Guide to Roller Coasters and Theme Parks</p>
         <nav>
-            <a href="index.html">Home</a>
-            <a href="#">Coaster Guide</a>
-            <a href="#">Plan Your Visit</a>
-            <a href="#" aria-current="page">Contact Us</a>
+            <ul class="u-list-unstyled">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">Coaster Guide</a></li>
+                <li><a href="plan.html">Plan Your Visit</a></li>
+                <li><a href="#" aria-current="page">Contact Us</a></li>
+            </ul>
         </nav>
+
     </header>
 
     <main>
 
+        <h2 class="u-text-center">Contact Us</h2>
+    
+        <form>
+    
+            <div class="form-field">
+                <label for="name" class="u-text-small">Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+    
+            <div class="form-field">
+                <label for="email" class="u-text-small" required>Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+    
+            <div class="form-field">
+                <label for="message" class="u-text-small">Question</label>
+                <textarea id="message" name="message" required></textarea>
+            </div>
+    
+            <button class="button" type="submit">Submit</button>
+    
+        </form>
+    
     </main>
 
-    <footer>
-        <p> all rights reserved</p>
+    <footer class="u-text-center">
+        <p class="u-text-small"> all rights reserved</p>
     </footer>
 
 </body>
