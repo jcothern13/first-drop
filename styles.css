@@ -90,6 +90,12 @@
         grid-template-columns: 1fr 1fr;
         gap: var(--space-lrg);
     }
+
+    .coaster-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 2fr) minmax(14rem, 1fr);
+        gap: var(--space-lrg);
+    }
 }
 
 @layer components{
