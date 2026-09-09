@@ -1,21 +1,22 @@
 @layer reset, base, layout, components, utilities, states, overrides, print;
 
-@layer reset{
+@layer reset {
+
     *,
     *::before,
-    *::after{
-      box-sizing: border-box;
+    *::after {
+        box-sizing: border-box;
     }
-  
-    body{
-      margin: 0;
+
+    body {
+        margin: 0;
     }
 
 }
 
-@layer base{
+@layer base {
 
-    :root{
+    :root {
         /** colors **/
         --color-text: #0B132B;
         --color-background: #FFFFFF;
@@ -42,7 +43,7 @@
         --focus-width: 2px;
     }
 
-    body{
+    body {
         background-color: var(--color-text);
         color: var(--color-text);
         font-family: var(--font-family);
@@ -50,25 +51,26 @@
         line-height: var(--line-height);
     }
 
-    h1{
+    h1 {
         font-size: var(--font-heading-lrg);
         color: var(--color-primary);
     }
 
-    h2{
+    h2 {
         font-size: var(--font-heading-sml);
         color: var(--color-primary);
     }
-    h3{
+
+    h3 {
         color: var(--color-primary);
     }
 
-    a{
+    a {
         color: var(--color-primary);
         text-decoration: none;
     }
 
-    img{
+    img {
         max-width: 100%;
         height: auto;
         border-radius: var(--border-radius);
@@ -76,11 +78,11 @@
 
 }
 
-@layer layout{
+@layer layout {
 
-    header, 
-    main, 
-    footer{
+    header,
+    main,
+    footer {
         inline-size: 100%;
         max-inline-size: 75rem;
         background-color: var(--color-background);
@@ -89,9 +91,9 @@
         padding-block: var(--space-med);
     }
 
-    .content-grid{
+    .content-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(16rem,1fr));
+        grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
         gap: var(--space-med);
     }
 
@@ -108,9 +110,9 @@
     }
 }
 
-@layer components{
+@layer components {
 
-    nav ul{
+    nav ul {
         display: flex;
         gap: var(--space-med);
         justify-content: flex-end;
@@ -125,35 +127,35 @@
         }
     }
 
-    .gallery{
+    .gallery {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: var(--space-med);
     }
 
-    @media(max-width:50rem){
-        .gallery{
+    @media(max-width:50rem) {
+        .gallery {
             grid-template-columns: 1fr;
         }
 
     }
 
-    .guide-container{
+    .guide-container {
         container-type: inline-size;
     }
 
-    .guide-list{
+    .guide-list {
         inline-size: 100%;
         margin-inline: auto;
     }
 
-    .guide-list ul{
+    .guide-list ul {
         margin-block-start: var(--space-sml);
     }
 
-    .guide-list > li{
+    .guide-list>li {
         margin-block: var(--space-med);
-   
+
     }
 
     @container (min-width: 35rem) {
@@ -164,12 +166,12 @@
             text-align: center;
         }
 
-        .guide-list ul{
+        .guide-list ul {
             padding-inline-start: 0;
         }
     }
 
-    .button{
+    .button {
         --button-background: var(--color-accent);
         --button-text: var(--color-background);
 
@@ -180,33 +182,31 @@
         border: none;
     }
 
-    .form-field{
+    .form-field {
         display: flex;
         flex-direction: column;
         gap: var(--space-sml);
         margin-block-end: var(--space-med);
     }
 
-    .form-field textarea{
+    .form-field textarea {
         resize: vertical;
         font-family: var(--font-family);
     }
 
-    form{
+    form {
         max-inline-size: 20rem;
         margin-inline: auto;
     }
 
-    form > .button{
+    form>.button {
         display: block;
         margin-inline: auto;
     }
 
-    .coaster-grid img{
-        /* max-inline-size: 8rem; */
+    .coaster-grid img {
         grid-column: 1;
         grid-row: 2;
-        
     }
 
     .coaster-card h3 {
@@ -235,61 +235,82 @@
 
 }
 
-@layer utilities{
+@layer utilities {
 
-    .u-text-center{
+    .u-text-center {
         text-align: center;
     }
 
-    .u-list-unstyled{
+    .u-list-unstyled {
         list-style: none;
     }
 
-    .u-text-small{
+    .u-text-small {
         font-size: 0.75rem;
     }
 
 }
 
-@layer states{
+@layer states {
 
-    
-    a:hover{
+
+    a:hover {
         color: var(--color-accent);
     }
 
-    a:focus-visible{
+    a:focus-visible {
         outline: var(--focus-width) solid var(--color-primary);
     }
 
-    nav a[aria-current="page"]{
+    nav a[aria-current="page"] {
         border-block-end: 2px solid var(--color-accent);
     }
 
-    .form-field input:invalid, 
-    .form-field textarea:invalid{
-    border: var(--focus-width) solid var(--color-accent);
-}
+    .form-field input:focus-visible,
+    .form-field textarea:focus-visible,
+    button:focus-visible {
+        outline: var(--focus-width) solid var(--color-primary);
+    }
+
+    .form-field input:invalid,
+    .form-field textarea:invalid {
+        border: var(--focus-width) solid var(--color-accent);
+    }
+
+    .coaster-card img {
+        transition: transform 0.2s ease;
+    }
+
+    .coaster-card img:hover {
+        transform: scale(2.03);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .coaster-card img {
+            transition: none;
+        }
+    }
 
 }
 
-@layer overrides{
+@layer overrides {}
 
-}
+@layer print {
+    @media print {
 
-@layer print{
-    @media print{
-
-        nav{
+        nav {
             display: none;
-          }
+        }
 
-        body{
+        body {
             background-color: var(--color-background);
         }
 
-        body, h1, h2, a{
+        body,
+        h1,
+        h2,
+        a {
             color: #000;
         }
-        }
+    }
 }
