@@ -59,6 +59,9 @@
         font-size: var(--font-heading-sml);
         color: var(--color-primary);
     }
+    h3{
+        color: var(--color-primary);
+    }
 
     a{
         color: var(--color-primary);
@@ -78,23 +81,30 @@
     header, 
     main, 
     footer{
-        width: 100%;
-        max-width: 75rem;
+        inline-size: 100%;
+        max-inline-size: 75rem;
         background-color: var(--color-background);
         margin-inline: auto;
-        padding: var(--space-med);
+        padding-inline: var(--space-med);
+        padding-block: var(--space-med);
     }
 
     .content-grid{
         display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: var(--space-lrg);
+        grid-template-columns: repeat(auto-fit, minmax(16rem,1fr));
+        gap: var(--space-med);
     }
 
     .coaster-grid {
         display: grid;
         grid-template-columns: minmax(0, 2fr) minmax(14rem, 1fr);
         gap: var(--space-lrg);
+    }
+
+    @media (max-width: 50rem) {
+        .coaster-grid {
+            grid-template-columns: 1fr;
+        }
     }
 }
 
@@ -106,23 +116,57 @@
         justify-content: flex-end;
     }
 
+    @media (max-width: 30rem) {
+        nav ul {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--space-sml);
+            text-align: center;
+        }
+    }
+
     .gallery{
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: var(--space-med);
     }
 
+    @media(max-width:50rem){
+        .gallery{
+            grid-template-columns: 1fr;
+        }
+
+    }
+
+    .guide-container{
+        container-type: inline-size;
+    }
+
     .guide-list{
-        width: fit-content;
+        inline-size: 100%;
         margin-inline: auto;
     }
 
     .guide-list ul{
-        margin-top: var(--space-sml);
+        margin-block-start: var(--space-sml);
     }
 
     .guide-list > li{
         margin-block: var(--space-med);
+   
+    }
+
+    @container (min-width: 35rem) {
+        .guide-list {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(10rem, 1fr));
+            gap: var(--space-sml);
+            text-align: center;
+        }
+
+        .guide-list ul{
+            padding-inline-start: 0;
+        }
     }
 
     .button{
@@ -140,7 +184,7 @@
         display: flex;
         flex-direction: column;
         gap: var(--space-sml);
-        margin-bottom: var(--space-med);
+        margin-block-end: var(--space-med);
     }
 
     .form-field textarea{
@@ -149,13 +193,43 @@
     }
 
     form{
-        max-width: 20rem;
+        max-inline-size: 20rem;
         margin-inline: auto;
     }
 
     form > .button{
         display: block;
         margin-inline: auto;
+    }
+
+    .coaster-grid img{
+        /* max-inline-size: 8rem; */
+        grid-column: 1;
+        grid-row: 2;
+        
+    }
+
+    .coaster-card h3 {
+        grid-column: 1 / -1;
+        grid-row: 1;
+        text-align: center;
+        margin-block-end: 0;
+        text-transform: uppercase;
+    }
+
+    .coaster-card p {
+        grid-column: 2;
+        grid-row: 2;
+        font-size: .9rem;
+    }
+
+    .coaster-card {
+        border: 1px solid var(--color-primary);
+        border-radius: var(--border-radius);
+        display: grid;
+        grid-template-columns: minmax(8rem, 1fr) 1fr;
+        gap: var(--space-sml);
+        padding: var(--space-sml);
     }
 
 
@@ -189,8 +263,7 @@
     }
 
     nav a[aria-current="page"]{
-        border-bottom: 2px solid var(--color-accent);
-        
+        border-block-end: 2px solid var(--color-accent);
     }
 
     .form-field input:invalid, 
