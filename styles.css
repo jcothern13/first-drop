@@ -174,7 +174,6 @@
     .button {
         --button-background: var(--color-accent);
         --button-text: var(--color-background);
-
         background-color: var(--button-background);
         color: var(--button-text);
         padding: var(--space-sml);
@@ -231,8 +230,6 @@
         gap: var(--space-sml);
         padding: var(--space-sml);
     }
-
-
 }
 
 @layer utilities {
@@ -248,11 +245,9 @@
     .u-text-small {
         font-size: 0.75rem;
     }
-
 }
 
 @layer states {
-
 
     a:hover {
         color: var(--color-accent);
