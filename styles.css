@@ -249,6 +249,7 @@
 
 @layer states {
 
+
     a:hover {
         color: var(--color-accent);
     }
