@@ -118,6 +118,14 @@
         justify-content: flex-end;
     }
 
+    .coaster-video {
+        display: block;
+        inline-size: 100%;
+        max-inline-size: 20rem;
+        block-size: auto;
+        margin-inline: auto;
+    }
+
     @media (max-width: 30rem) {
         nav ul {
             display: grid;
