@@ -20,7 +20,7 @@
         /** colors **/
         --color-text: #0B132B;
         --color-background: #FFFFFF;
-        --color-accent: #008C95;
+        --color-accent: #00747C;
         --color-primary: #3A506B;
 
         /** font **/
@@ -292,6 +292,10 @@
     @media (prefers-reduced-motion: reduce) {
         .coaster-card img {
             transition: none;
+        }
+
+        .coaster-card img:hover {
+            transform: none;
         }
     }
 
